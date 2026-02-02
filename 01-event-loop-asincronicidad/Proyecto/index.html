@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="es">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simulador de Pedidos - Cafetería</title>
+    <style>
+        body {
+        font-family: system-ui, Arial;
+        padding: 16px;
+        }
+        button {
+        padding: 10px 14px;
+        cursor: pointer;
+        }
+        ul {
+        padding-left: 18px;
+        }
+        li {
+        margin: 8px 0;
+        }
+        .badge {
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 999px;
+        font-size: 12px;
+        }
+        .proceso {
+        background: #fff3cd;
+        }
+        .completado {
+        background: #d1e7dd;
+        }
+        .log {
+        margin-top: 16px;
+        padding: 12px;
+        background: #f6f8fa;
+        border-radius: 8px;
+        max-height: 220px;
+        overflow: auto;
+        }
+        .row {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+        .hint {
+        color: #555;
+        font-size: 13px;
+        }
+    </style>
+    </head>
+
+    <body>
+    <h1>Cafetería: Simulador de Pedidos</h1>
+
+    <div class="row">
+        <button id="addOrderBtn">Agregar Pedido</button>
+        <span class="hint">
+        Tip: abre la consola para ver el orden de ejecución.
+        </span>
+    </div>
+
+    <h2>Pedidos</h2>
+    <ul id="orderList"></ul>
+
+    <h2>Bitácora (para “ver” el Event Loop)</h2>
+    <div id="logBox" class="log"></div>
+
+    <script src="app.js"></script>
+    </body>
+</html>
