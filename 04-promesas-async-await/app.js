@@ -40,7 +40,7 @@ function registrarUsuario(nombre) {
 
         setTimeout(() => {
             if (nombre) {
-                resolve(`El usuario ${nombre} se ha registro correctamente`)
+                resolve(`El usuario ${nombre} se registro correctamente`)
             } else {
                 reject("El nombre de usuario es obligatorio")
             }
@@ -59,7 +59,7 @@ function enviarCorreoBienvenida( nombre ) {
 
 //Manejo del formulario 
 
-const form = document.getElementById("registroForm")
+/* const form = document.getElementById("registroForm")
 const mensaje = document.getElementById("mensaje")
 
 form.addEventListener("submit", (event) => {
@@ -90,4 +90,37 @@ form.addEventListener("submit", (event) => {
     })
 
 
-})
+}) */
+
+//ejemplo chef hamburguesas async await
+
+let isOpen = true
+
+let eleccion_salsas = () => {
+
+    return new Promise ( (resolve, reject) => {
+        setTimeout( () => {
+            resolve( console.log("Que salsas quieres?"))
+        }, 4000)
+    })
+
+}
+
+let cocina = async () => {
+    console.log("A")
+    console.log("B")
+    console.log("C")
+
+    await eleccion_salsas()
+    
+    console.log("D")
+    console.log("E")
+
+}
+
+cocina()
+
+console.log("Lavando platos");
+console.log("Limpiando las mesas");
+console.log("Registro de nuevas ordenes");
+
