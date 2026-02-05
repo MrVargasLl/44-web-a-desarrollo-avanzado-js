@@ -1,0 +1,93 @@
+
+//Ejemplo 1 promesas: Tienda de hamburgesas
+
+/* let tiendaAbierta = true;
+
+let pedido = (tiempo, proceso) => {
+    return new Promise((resolve, reject) => {
+        if (tiendaAbierta) {
+            //Ejecutar la funcion del proceso
+
+            setTimeout(() => {
+                resolve(proceso());
+            }, tiempo);
+        } else {
+            reject(console.log("Tienda cerrada"));
+        }
+    });
+};
+
+pedido( 3000, () => console.log("Ingredientes reunidos correctamente")   )
+.then( () => {
+    return pedido( 2000,  () => {console.log("Carne cocinada") }) 
+} ).then( () => {
+    return pedido( 1000,  () => {console.log("El pan ya esta tostado") }) 
+} ).then( () => {
+    return pedido( 3000,  () => {console.log("Hamburguesa armada") }) 
+} ).then( () => {
+    return pedido( 2000,  () => {console.log("Tu pedido esta listo para llevar") }) 
+} ).catch( () => { console.log("El cliente se ha ido")})
+.finally( () => {console.log("Jornada finalizada. La tienda ya cerro")
+})
+ */
+
+//Ejemplo 2 promesas: Registro de usuarios 
+
+//Creacion de funciones
+
+function registrarUsuario(nombre) {
+    return new Promise((resolve, reject) => {
+
+        setTimeout(() => {
+            if (nombre) {
+                resolve(`El usuario ${nombre} se ha registro correctamente`)
+            } else {
+                reject("El nombre de usuario es obligatorio")
+            }
+        }, 1500)
+    })
+}
+
+function enviarCorreoBienvenida( nombre ) {
+    
+    return new Promise( (resolve) => {
+        setTimeout( ( ) => {
+            resolve( `Correo de bienvenida enviado a ${nombre}`)
+        }, 1500)
+    })
+}
+
+//Manejo del formulario 
+
+const form = document.getElementById("registroForm")
+const mensaje = document.getElementById("mensaje")
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault() //para que no se recargue la pagina por defecto
+    
+    const usuario = document.getElementById("usuario").value
+    const password = document.getElementById("password").value
+
+    if( !usuario || !password){
+        mensaje.textContent = "Todos los campos son obligatorios"
+        mensaje.style.color = "red"
+        return
+    }
+
+    //Encadenamiento de promesas 
+    registrarUsuario( usuario )
+    .then ( result => {
+        mensaje.textContent = result
+        mensaje.style.color = "green"
+        return enviarCorreoBienvenida( usuario )
+    } )
+    .then ( result => { 
+        alert(result)
+    })
+    .catch( error => {
+        mensaje.textContent = error
+        mensaje.style.color = "red"
+    })
+
+
+})
