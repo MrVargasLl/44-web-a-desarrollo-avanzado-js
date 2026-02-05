@@ -93,7 +93,7 @@ form.addEventListener("submit", (event) => {
 }) */
 
 //ejemplo chef hamburguesas async await
-
+/* 
 let isOpen = true
 
 let eleccion_salsas = () => {
@@ -124,3 +124,21 @@ console.log("Lavando platos");
 console.log("Limpiando las mesas");
 console.log("Registro de nuevas ordenes");
 
+ */
+
+//Analisis proyecto de clase
+
+const mesasDisponibles = 5;  // Número de mesas disponibles para reservar
+function verificarDisponibilidad(mesasSolicitadas) {
+    return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      // Completa la lógica aquí: Si hay suficientes mesas disponibles, resuelve la promesa, 
+    if (mesasSolicitadas <= mesasDisponibles) {
+        resolve (`Corfimada la reserva de la cantida de mesas ${mesasSolicitadas}`)
+       // de lo contrario, recházala con un mensaje adecuado.
+    } else {
+        reject(`No es posible reservar las cantidad de mesas ${mesasSolicitadas}`)
+    }
+    }, 2000); 
+    });
+}
