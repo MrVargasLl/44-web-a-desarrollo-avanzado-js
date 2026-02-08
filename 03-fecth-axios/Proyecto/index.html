@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumo de APIs</title>
+    <!-- Incluyendo axios para poderlo utilizar-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<style>
+    #data-container {
+        text-align: center;
+    }
+    #data-container div {
+        display: inline-block;
+        margin: 10px;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh; /* Esto asegura que el contenido se centre verticalmente */
+        text-align: center; /* Para centrar el texto de los inputs y botones */
+    }
+
+    /* Opcional: Añadir un pequeño margen para que los elementos no estén pegados entre sí */
+    input, button {
+        margin: 10px;
+    }
+</style>
+<body>
+    <h1>Información de Personajes</h1>
+    <input type="text" id="busqueda" placeholder="Nombre de personaje...">
+    <!--<button id="btnBuscar">Buscar</button>-->
+    <!-- Nuevo-->
+    <button id="fetch-btn">Obtener con Fetch</button>
+    <button id="axios-btn">Obtener con Axios</button>
+
+    <div id="data-container"></div>
+    <!--<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>-->
+    <script src="./app.js"></script>
+</body>
+
+</html>
