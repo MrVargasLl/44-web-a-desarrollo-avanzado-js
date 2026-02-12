@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <form id="myForm">
+        <div>
+            <label for="name">Nombre</label>
+            <input type="text" id="name" name="name" placeholder="John Doe...">
+        </div>
+        <div>
+            <label for="email">Correo</label>
+            <input type="text" id="email" name="email" placeholder="John@email.com">
+            <p id="errorEmail"></p>
+        </div>
+        <div>
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="xxxxxxx">
+        </div>
+        <h2>Selecciona colores favoritos</h2>
+        <div>
+            <input type="checkbox" name="colores" id="rojo" value="rojo">
+            <label for="rojo">Rojo</label>
+            <br>
+            <input type="checkbox" name="colores" id="amarillo" value="amarillo">
+            <label for="amarillo">Amarillo</label>
+            <br>
+            <input type="checkbox" name="colores" id="verde" value="verde">
+            <label for="verde">Verde</label>
+        </div>
+
+
+        <!--<input type="submit" value="Register">-->
+        <button type="submit">Registrar</button>
+
+
+    </form>
+
+
+
+    <script src="./app.js"></script>
+
+</body>
+
+</html>
