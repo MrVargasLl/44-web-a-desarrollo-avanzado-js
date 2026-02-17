@@ -17,10 +17,11 @@ const registerSchema = z.object({
         .regex(/[0-9]/, 'Debe contener al menos un número')
 });
 
+
 const errorMessage = document.getElementById('errors');
 
-document
-    .getElementById("registerForm")
+
+    document.getElementById("registerForm")
     .addEventListener("submit", (event) => {
         event.preventDefault();
 
